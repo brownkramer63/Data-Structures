@@ -14,16 +14,23 @@ public class TwoSumProblem {
 
         for (int i = 0; i < arr.length ; i++) {
 
-            for (int j = 0; j < arr.length ; j++) {
+            for (int j = 1; j < arr.length ; j++) {//need to start with one as we are looking for different values as a pair
+                if (i!=j){ //this is so it wont return same value
                 if (arr[i]+arr[j]==sumwanted){
                    return new int[]{ i,j};
                 }
 
-            }
+            }}
 
         }
 
 
 return new int[]{};
     }
+//public static int[] twosumsolution2(int[] arr,int sumwanted){
+//
+//
+//        return int[];
+//}
+
 }
