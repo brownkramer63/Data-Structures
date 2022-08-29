@@ -28,13 +28,36 @@ students.add(new Student(4,"Mike"));
         }
 
         // Backwards Iteration
+        System.out.println("backward iteration---------------");
+        //idk how to do
+
 
         // 3. for each loop
-
+        System.out.println("for each loop------------");
+        for (Student each:students
+             ) {
+            System.out.println(each);
+        }
 
         // 4. Lambda
+        System.out.println("lambda----------------");
 
-        // Sorting Elements in List
+     students.forEach(student -> System.out.println(student));
+
+        // Sorting Elements in List using comparator interface
+        System.out.println("elements in a list using comparator by ID descending---------");
+
+        //implementations of comparator
+        Collections.sort(students,new sortbyIDDescending());
+        students.forEach(student -> System.out.println(student));
+
+
     }
+static class sortbyIDDescending implements Comparator<Student> {
 
+    @Override
+    public int compare(Student o1, Student o2) {
+        return o2.id-o1.id;
+    }
+}
 }
