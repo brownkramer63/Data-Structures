@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSumProblem {
     public static void main(String[] args) {
@@ -7,6 +9,7 @@ public class TwoSumProblem {
 
         System.out.println(Arrays.toString(twosum(arr,6)));
 
+        System.out.println(Arrays.toString(twosumsolution2(arr,6)));
 
 
     }
@@ -27,10 +30,17 @@ public class TwoSumProblem {
 
 return new int[]{};
     }
-//public static int[] twosumsolution2(int[] arr,int sumwanted){
-//
-//
-//        return int[];
-//}
+public static int[] twosumsolution2(int[] arr,int sumwanted){
+//creat hashmap
+    Map<Integer,Integer> map=new HashMap<>();
+    for (int i = 0; i <arr.length ; i++) {
+        int potentialMatch = sumwanted-arr[i];
+        if (map.containsKey(potentialMatch)) return new int[] {i,map.get(potentialMatch)};
+        else map.put(arr[i],i);
+    }
+
+
+        return new int[]{};
+}
 
 }
